@@ -1,10 +1,7 @@
-import * as fs from 'fs';
-import * as path from 'path';
-
+import { loadInputFile } from '../helpers/load';
 import { countIncreases, reduceMeasurements } from './depth';
 
-const text = fs.readFileSync(path.resolve('./src/day1/input.txt')).toString();
-const data = text.split('\n').map(n => Number(n));
+const data = loadInputFile('./src/day1/input.txt').map(n => Number(n));
 
 // part 1
 console.log('Part 1: ' + countIncreases(data));
